@@ -1,0 +1,78 @@
+/* contenido de la nabvar y collapse */
+.collapse{
+  margin-bottom: 0px;
+ height: auto;
+}
+#acerca{
+  padding-left:15px;
+  padding-right: 15px;
+}
+
+
+/* contenido central de la apgina */
+#jumbotron{
+  border:1px solid
+}
+.btn-circle.btn-xl{
+ 
+  border: 1px solid #F8C246;
+  float: right;
+  margin-right: 80px ;
+  background-color: #343A40;
+  margin-top: -100px;
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+ 
+}
+#cont1{
+  border: 1px solid black;
+  background-color: rgb(233, 236, 240);
+}
+#cont2{
+  border:1px solid black;
+  background-color:#F8F9FA;
+  min-height: 500px;
+  max-height: auto;
+
+}
+.row{
+  display: flex;
+  flex-direction: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.nota{
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  background-color: red;
+  border:1px solid black;
+}
+
+#formulario{
+ width: 100%;
+ height: 100%;
+  border: 1px solid black;
+
+}
+#input-titulo{
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+::placeholder{
+  color: white;
+}
+#description{
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+  outline: none;
+}
