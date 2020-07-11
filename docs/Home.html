@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
     <!-- jquery para javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- fin de jquery -->
@@ -33,26 +33,39 @@
 
     </style>
    <script>
-       //funcion para poder capturar el contenido de las notas y mostrarlo por
-       function guardar(){
-           var ok = true; // si es true no se mostrara mensaje de error
-           var nombre= document.getElementById('nombre').value;//se obtine el valor ingresao en los input
-           var tarea = document .getElementById('tarea').value;
-           if(document.getElementById('nombre').value==""|| document.getElementById('tarea').value==""){// se pregunysi lo que viene a traves de los input viene vacio 
-               alert("ingrese los datos"+nombre);// mensaje de alerta mostrando el contenido proveniente del input osea vacio
-               ok = false;
-           }
-           else{
-            console.log(nombre,tarea);// muestra el valor que vene desde los input pero esto atraves de la consola 
-           //alert("tu nombre"+nombre+" y tu tarea"+tarea);
-           var datos="<tr><td>"+nombre+":"+tarea+"</td>";// se crea una varia la cuan diseña untabala en su interior para poder diseñarla
-           var btn = document.createElement("TR"); //se crea una variable para poder diseñar el tr indicando que cree eso y puedsa user utilizado como nodo
-            btn.innerHTML=datos;
-            document.getElementById("lista").appendChild(btn); //llamamos a la lista y agregamos el nodo 
-            
-           return ok;
-           }
-       }
+     //objeto nota
+        const Nota={
+          id:0,
+          Titulo:'',
+          Nota:'',
+          
+        }
+        
+        //funcion para validar si hay notas creadas de no haber notas debera mostrar el mensaje que no hay notas 
+        window.onload=function val(){
+          if(Nota.id==0){
+            alert("no hay notas");
+            const div = document.createElement("DIV");
+            div.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
+            document.body.appendChild(cont3).appendChild(div);
+          }
+          else{
+            alert("si hay notas");
+            const div = document.createElement("DIV");
+            div.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
+            document.body.appendChild(cont3).appendChild(div);
+          }
+          
+        }
+        //funcion para poder almacenar la notas y poder crear objeto nota
+        function guardar(){
+          const id= Nota.id;
+          const titulo =Nota.Titulo;
+          const Nota= Nota.Nota;
+         
+         
+          
+        }
 
         //funcion para ocultar y mostrar el boton
        
@@ -111,7 +124,7 @@
             <!-- jumbotron -->
             <div  id="jumbotron"class="jumbotron text-center">
               <div class="container">
-                <h1 id="pregunta">¿where is take-note?</h1>
+                <h1 id="pregunta">¿what is take-note?</h1>
                 <p class="lead text-muted">take a note is a web page where you write a note or write different things 
 
                 </p>
@@ -121,38 +134,36 @@
                 </p>
               </div>
             </div>
-            <button  id="slide"type="button" class="btn btn-warning btn-circle btn-xl" ><i class="fa fa-chevron-right  text-white"></i>
+           
              <!-- fin-jumbotron -->
           </div>
-          <div id="cont2" class="col-md-12">
-           <div class="container">
-             <div id="formulario"class="col-md-4 mx-auto mt-2 bg-dark">
-               <div>
-                 <input class="bg-transparent text-white"  id="input-titulo"type="text"  name="titulo" placeholder="Titulo" size="50" autocomplete="off" />
-               </div>
-               <div>
-                  <textarea id="description" placeholder="Crear nota"class="bg-transparent text-white"name="tarea" id="tarea" cols="50" rows="5" autocomplete="off" ></textarea>
-               </div>
-               <div>
-                 <button type="submit" class="btn btn-dark text-warning" >Guardar</button>
-               </div>
-             </div>
-             <div class="row">
-              <div class="col-md-4 nota">
-                <div class="card mb-4 shadow-md">
-                 
-                </div>
-              </div>
-              <div class="col-md-4 nota">nota2</div>
-              <div class="col-md-4 nota">nota3</div>
-             </div>
-           </div>
-         
-          </div>
+        
           
         </div>
     </div>
-    <!-- fin-contenedor -->
+    <!-- fin-contenedor1 -->
+    <div id="cont2" class="col-md-12">
+      <div class="container">
+        <div id="formulario"class="col-md-6 mx-auto bg-dark text-center">
+          <div>
+            <input class="bg-transparent text-white mt-2"  id="input-titulo"type="text"  name="titulo" placeholder="Titulo" size="70" autocomplete="off" />
+          </div>
+          <div>
+             <textarea id="description" placeholder="Crear nota"class="bg-transparent text-white"name="tarea" id="tarea" cols="70" rows="5" autocomplete="off" ></textarea>
+          </div>
+          <div>
+            <button id="btns" type="submit" class="btn btn-dark text-warning d-flex justify-content-center align-center" >Guardar</button>
+          </div>
+        </div>
+        <div class="row">
+         <div id="cont3"class="container">
+       
+         </div>
+         
+        </div>
+      </div>
+    
+     </div>
    
 </body>
 </html>
