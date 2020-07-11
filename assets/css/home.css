@@ -39,7 +39,7 @@
   /* border: 1px solid black; */
 
 }
-#input-titulo{
+#titulo{
   border-bottom: none;
   border-top: none;
   border-left: none;
@@ -49,7 +49,7 @@
 ::placeholder{
   color: white;
 }
-#description{
+#nota{
   border-top: none;
   border-bottom: none;
   border-right: none;

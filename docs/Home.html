@@ -34,20 +34,20 @@
     </style>
    <script>
      //objeto nota
-        const Nota={
+        const nota={
           id:0,
-          Titulo:'',
-          Nota:'',
+          titulo:'',
+          nota:'',
           
         }
         
         //funcion para validar si hay notas creadas de no haber notas debera mostrar el mensaje que no hay notas 
-        window.onload=function val(){
-          if(Nota.id==0){
+        window.onload=function(){
+          if(nota.id==0){
             alert("no hay notas");
-            const div = document.createElement("DIV");
-            div.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
-            document.body.appendChild(cont3).appendChild(div);
+            const h1 = document.createElement("DIV");
+            h1.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
+            document.body.appendChild(cont3).appendChild(h1);
           }
           else{
             alert("si hay notas");
@@ -59,16 +59,32 @@
         }
         //funcion para poder almacenar la notas y poder crear objeto nota
         function guardar(){
-          const id= Nota.id;
-          const titulo =Nota.Titulo;
-          const Nota= Nota.Nota;
-         
-         
+          const id =nota.id = nota.id+1;
+          const titulo = nota.titulo = document.getElementById('titulo').value;
+          const note = nota.nota = document.getElementById('nota').value
+          
+          if(document.getElementById("titulo").value==''){
+            alert("Completa el campo titulo")
+          }
+          else if(document.getElementById("nota").value==''){
+            alert("Anota tu idea")
+          }
+          else{
+            console.log(id+" "+titulo+" "+note);
+            const div = document.createElement("DIV");
+            div.innerHTML = "<div class='hola'id="+id+"><ID id="+id+">"+id+"<br>"+"TITULO"+titulo+"<br>"+"NOTA:"+note+"<br>"+"<button onClick='eliminar("+id+");'>borrar</button>";
+            document.body.appendChild(cont3).appendChild(div);
+
+
+          }
           
         }
 
         //funcion para ocultar y mostrar el boton
-       
+        function eliminar(id){
+          document.getElementById(id).remove();
+          console.log(id);
+         
 
             
     </script>
@@ -146,13 +162,13 @@
       <div class="container">
         <div id="formulario"class="col-md-6 mx-auto bg-dark text-center">
           <div>
-            <input class="bg-transparent text-white mt-2"  id="input-titulo"type="text"  name="titulo" placeholder="Titulo" size="70" autocomplete="off" />
+            <input id="titulo" class="bg-transparent text-white mt-2" type="text"  name="titulo" placeholder="Titulo" size="70" autocomplete="off" />
           </div>
           <div>
-             <textarea id="description" placeholder="Crear nota"class="bg-transparent text-white"name="tarea" id="tarea" cols="70" rows="5" autocomplete="off" ></textarea>
+             <textarea  id="nota" placeholder="escribe tu idea"class="bg-transparent text-white" name="nota"  cols="70" rows="5" autocomplete="off" ></textarea>
           </div>
           <div>
-            <button id="btns" type="submit" class="btn btn-dark text-warning d-flex justify-content-center align-center" >Guardar</button>
+            <button id="btns" onClick="guardar()" class="btn btn-warning text-dark " >Guardar</button>
           </div>
         </div>
         <div class="row">
