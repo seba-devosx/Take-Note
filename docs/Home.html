@@ -29,7 +29,13 @@
       body,#font{
         font-family: 'Oswald', sans-serif;
       }
-     
+      .note{
+        width: 150px;
+        float: left;
+        margin-left: 5px;
+        border:1px solid green;
+        background-color: aqua;
+      }
 
     </style>
    <script>
@@ -72,8 +78,9 @@
           else{
             console.log(id+" "+titulo+" "+note);
             const div = document.createElement("DIV");
-            div.innerHTML = "<div class='hola'id="+id+"><ID id="+id+">"+id+"<br>"+"TITULO"+titulo+"<br>"+"NOTA:"+note+"<br>"+"<button onClick='eliminar("+id+");'>borrar</button>";
+            div.innerHTML = "<div class='note'id="+id+"><ID id="+id+">"+id+"<br>"+"TITULO"+titulo+"<br>"+"NOTA:"+note+"<br>"+"<button onClick='eliminar("+id+");'>borrar</button>";
             document.body.appendChild(cont3).appendChild(div);
+            
 
 
           }
