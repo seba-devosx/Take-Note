@@ -1,3 +1,6 @@
+
+
+
 /* contenido de la nabvar y collapse */
 .collapse{
   margin-bottom: 0px;
@@ -10,15 +13,15 @@
 
 
 /* contenido central de la apgina */
-/* #jumbotron{
+ #jumbotron{
   border:1px solid
-} */
-#cont1{
-  /* border: 1px solid black; */
+} 
+#slide{
+  border: 1px solid black;
   background-color: rgb(233, 236, 240);
 }
-#cont2{
-  /* border:1px solid black; */
+#note-write{
+   border:1px solid black; 
  
   min-height: 200px;
 
@@ -34,9 +37,10 @@
 
 #formulario{
  width: 100%;
- height: 100%;
+ height: 220px;
  margin-top: 20px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
+  border-radius: 10px;
 
 }
 #titulo{
@@ -58,14 +62,11 @@
   resize: none;
 }
 #btns{
-  display: flex;
-  align-items: center;
+  margin-bottom: 2px;
 }
-#cont3{
+#note_view{
   background-color: rgb(233, 236, 240);
   margin-top: 10px;
 
 }
-.note{
 
-}

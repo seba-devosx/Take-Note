@@ -4,95 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/home.css">
-    <!-- jquery para javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- fin de jquery -->
-
-    <!-- cdn bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-     <!-- fin-cdn bootstrap-->
-
-     <!-- js -->
-     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-     <!-- fin-js -->
+    <link rel="stylesheet" href="./../css/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
      <!-- iconos -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!--fin iconos -->
-      <!-- fonts -->
-      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
-      <!-- fin-font -->
-    <style>
-      body,#font{
-        font-family: 'Oswald', sans-serif;
-      }
-      .note{
-        width: 150px;
-        float: left;
-        margin-left: 5px;
-        border:1px solid green;
-        background-color: aqua;
-      }
-
-    </style>
-   <script>
-     //objeto nota
-        const nota={
-          id:0,
-          titulo:'',
-          nota:'',
-          
-        }
-        
-        //funcion para validar si hay notas creadas de no haber notas debera mostrar el mensaje que no hay notas 
-        window.onload=function(){
-          if(nota.id==0){
-            alert("no hay notas");
-            const h1 = document.createElement("DIV");
-            h1.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
-            document.body.appendChild(cont3).appendChild(h1);
-          }
-          else{
-            alert("si hay notas");
-            const div = document.createElement("DIV");
-            div.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
-            document.body.appendChild(cont3).appendChild(div);
-          }
-          
-        }
-        //funcion para poder almacenar la notas y poder crear objeto nota
-        function guardar(){
-          const id =nota.id = nota.id+1;
-          const titulo = nota.titulo = document.getElementById('titulo').value;
-          const note = nota.nota = document.getElementById('nota').value
-          
-          if(document.getElementById("titulo").value==''){
-            alert("Completa el campo titulo")
-          }
-          else if(document.getElementById("nota").value==''){
-            alert("Anota tu idea")
-          }
-          else{
-            console.log(id+" "+titulo+" "+note);
-            const div = document.createElement("DIV");
-            div.innerHTML = "<div class='note'id="+id+"><ID id="+id+">"+id+"<br>"+"TITULO"+titulo+"<br>"+"NOTA:"+note+"<br>"+"<button onClick='eliminar("+id+");'>borrar</button>";
-            document.body.appendChild(cont3).appendChild(div);
-            
-
-
-          }
-          
-        }
-
-        //funcion para ocultar y mostrar el boton
-        function eliminar(id){
-          document.getElementById(id).remove();
-          console.log(id);
-        } 
-    </script>
+   <script rel="text/javascript" src="./../js/logic.js"></script>
     </head>
     <body>
     <!-- nabvar -->
@@ -141,12 +65,12 @@
     <!-- contenedor -->
     <div class="container-fluid">
         <div class="row">
-          <div id="cont1" class="col-md-12">
+          <div id="slide" class="col-md-12">
             <!-- jumbotron -->
             <div  id="jumbotron"class="jumbotron text-center">
               <div class="container">
                 <h1 id="pregunta">¿what is take-note?</h1>
-                <p class="lead text-muted">take a note is a web page where you write a note or write different things 
+                <p class="lead text-muted">take a note is a web page where you write a note or write things different 
 
                 </p>
                 <p>
@@ -163,7 +87,7 @@
         </div>
     </div>
     <!-- fin-contenedor1 -->
-    <div id="cont2" class="col-md-12">
+    <div id="note-write" class="col-md-12">
       <div class="container">
         <div id="formulario"class="col-md-6 mx-auto bg-dark text-center">
           <div>
@@ -173,11 +97,11 @@
              <textarea  id="nota" placeholder="escribe tu idea"class="bg-transparent text-white" name="nota"  cols="70" rows="5" autocomplete="off" ></textarea>
           </div>
           <div>
-            <button id="btns" onClick="guardar()" class="btn btn-warning text-dark " >Guardar</button>
+            <button id="btns" onClick="guardar()" class="btn btn-block btn-warning" >Guardar</button>
           </div>
         </div>
         <div class="row">
-         <div id="cont3"class="container">
+         <div id="note_view"class="container">
        
          </div>
          
