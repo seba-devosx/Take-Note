@@ -1,4 +1,6 @@
-
+window.onbeforeunload = function() {
+  return "¿Desea recargar la página web?";
+};
 //objeto nota
 const nota={
     id:0,
