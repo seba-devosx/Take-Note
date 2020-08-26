@@ -12,14 +12,24 @@ const nota={
     if(nota.id==0){
     //   alert("no hay notas");
       const mensaje1 = document.createElement("DIV");
+<<<<<<< HEAD
       mensaje1.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
+=======
+      mensaje1.innerHTML = "<div id='titulo'class='text-center'><h1>Tus notas</h1></div>";
+>>>>>>> develop
       document.body.appendChild(note_view).appendChild(mensaje1);
     }
     else{
     //   alert("si hay notas");
+<<<<<<< HEAD
       const mensaje2 = document.createElement("DIV");
        mensaje2.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
       document.body.appendChild(note_view).appendChild(mensaje2);
+=======
+      // const mensaje2 = document.createElement("DIV");
+      //  mensaje2.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
+      // document.body.appendChild(note_view).appendChild(mensaje2);
+>>>>>>> develop
     }
     
   }
@@ -46,14 +56,22 @@ const nota={
         <div class="card-header">nota${id} <button type="button" id="borrar" class="close text-warning" aria-label="Close" onClick='eliminar(${id})'>
           <span aria-hidden="true">&times;</span>
         </button></div>
+<<<<<<< HEAD
         <h5 class="card-title text-warning">${titulo}</h5>
+=======
+        <h5 class="card-title text-warning text-center">${titulo}</h5>
+>>>>>>> develop
       <div class="card-body">
         
         <p class="card-text">${note}</p>
       </div>
  
     </div>`
+<<<<<<< HEAD
     document.body.appendChild(div).appendChild(note_view);
+=======
+    document.body.appendChild(note_view).appendChild(div);
+>>>>>>> develop
 
     }
     
