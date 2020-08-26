@@ -1,6 +1,4 @@
-window.onbeforeunload = function() {
-  return "¿Desea recargar la página web?";
-};
+
 //objeto nota
 const nota={
     id:0,
@@ -11,17 +9,17 @@ const nota={
   
   //funcion para validar si hay notas creadas de no haber notas debera mostrar el mensaje que no hay notas 
   window.onload=function(){
-    if(nota.id==1){
+    if(nota.id==0){
     //   alert("no hay notas");
-      const h1 = document.createElement("DIV");
-      h1.innerHTML = "<div id='titulo'class='text-center'><h1>No hay notas</h1></div>";
-      document.body.appendChild(note_view).appendChild(h1);
+      const mensaje1 = document.createElement("DIV");
+      mensaje1.innerHTML = "<div id='titulo'class='text-center'><h1>Tus notas</h1></div>";
+      document.body.appendChild(note_view).appendChild(mensaje1);
     }
     else{
     //   alert("si hay notas");
-      const div = document.createElement("DIV");
-      // div.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
-      document.body.appendChild(note_view).appendChild(div);
+      // const mensaje2 = document.createElement("DIV");
+      //  mensaje2.innerHTML = "<div id='titulo'class='text-center'><h1>Si hay Notas</h1></div><br>";
+      // document.body.appendChild(note_view).appendChild(mensaje2);
     }
     
   }
@@ -48,13 +46,15 @@ const nota={
         <div class="card-header">nota${id} <button type="button" id="borrar" class="close text-warning" aria-label="Close" onClick='eliminar(${id})'>
           <span aria-hidden="true">&times;</span>
         </button></div>
+        <h5 class="card-title text-warning text-center">${titulo}</h5>
       <div class="card-body">
-        <h5 class="card-title">${titulo}</h5>
+        
         <p class="card-text">${note}</p>
       </div>
  
     </div>`
     document.body.appendChild(note_view).appendChild(div);
+
     }
     
     
